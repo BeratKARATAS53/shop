@@ -1,24 +1,29 @@
-.order-container {
+.order-container, .product-container {
 	background-color: #E5E5E5;
 	padding: 2rem;
 	margin-right: 2rem;
 }
 
-.order-container h1 {
+.order-container h1, .product-container h1 {
 	color: #292E49 !important;
 	font-size: 24px;
 }
 
-.title *, .order-row *, .total * {
+.title *, .total * {
 	color: #6F6F6F !important;
 	font-size: 14px;
 }
 
-.order-row {
+.order-row, .product-row {
 	background-color: #CECECE;
 	border-radius: 20px;
 }
 
-.order-row * {
-	color: #3C3C3C !important
+.order-row *, .product-row * {
+	color: #3C3C3C !important;
+	font-size: 14px;
+}
+
+.order-row:hover, .product-row:hover {
+	background-color: #ABABAB !important;
 }

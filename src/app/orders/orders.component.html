@@ -1,18 +1,35 @@
-<div class="order-container">
-	<h1>Siparişler</h1>
-	<div class="row title mb-2">
-		<div class="col-1">Sıra</div>
-		<div class="col-5">Ürün Sayısı</div>
-		<div class="col-6 text-end">Toplam Tutar</div>
+<div class="row">
+	<div class="order-container" [ngClass]="{'col-md-4' : selectedOrder, 'col' : !selectedOrder}">
+		<h1>Siparişler</h1>
+		<div class="row title mb-2">
+			<div class="col-2">Sıra</div>
+			<div class="col-4">Ürün Sayısı</div>
+			<div class="col-6 text-end">Toplam Tutar</div>
+		</div>
+	
+		<div *ngFor="let order of orders; let index = index; let last = last;" class="row order-row py-2 clickable" [ngClass]="{'mb-2': !last}" (click)="selectOrder(index)">
+			<div class="col-2">{{index + 1}}</div>
+			<div class="col-4">{{order.count}}</div>
+			<div class="col-6 text-end">{{order.cost.toFixed(2)}} ₺</div>
+		</div>
+	
+		<div *ngIf="!orders.length" class="row order-row py-2">
+			<p class="m-0">Henüz bir sipariş oluşturulmamıştır.</p>
+		</div>
 	</div>
 
-	<div *ngFor="let order of orders; let index = index; let last = last;" class="row order-row py-2" [ngClass]="{'mb-2': !last}">
-		<div class="col-1">{{index + 1}}</div>
-		<div class="col-5">{{order.count}}</div>
-		<div class="col-6 text-end">{{order.cost.toFixed(2)}} ₺</div>
-	</div>
+	<div *ngIf="selectedOrder" class="col-md-7 product-container">
+		<h1>Sipariş Detayı</h1>
+		<div class="row title mb-2">
+			<div class="col-6">Ad</div>
+			<div class="col-3">Miktar</div>
+			<div class="col-3 text-end">Fiyat</div>
+		</div>
 
-	<div *ngIf="!orders.length" class="row order-row py-2">
-		<p class="m-0">Henüz bir sipariş oluşturulmamıştır.</p>
+		<div *ngFor="let item of selectedOrder.basket; let last = last;" class="row product-row py-2 clickable" [ngClass]="{'mb-2': !last}" (click)="router.navigate(['/products', item.id])">
+			<div class="col-6">{{item.name}}</div>
+			<div class="col-3">{{item.quantity}} {{item.unit}}</div>
+			<div class="col-3 text-end">{{(item.price * item.quantity).toFixed(2)}} ₺</div>
+		</div>
 	</div>
 </div>

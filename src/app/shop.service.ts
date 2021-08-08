@@ -12,6 +12,7 @@ export class ShopService {
 }
 
 export type Order = {
+	basket : Product[],
 	count : number,
 	cost : number
 }

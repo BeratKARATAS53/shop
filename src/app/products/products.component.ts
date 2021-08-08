@@ -10,7 +10,7 @@ import { ShopService, Order, Product } from "../shop.service";
 export class ProductsComponent {
 
 	products = products;
-	basket! : Product[];
+	basket!: Product[];
 
 	orderCreated = false;
 
@@ -32,6 +32,7 @@ export class ProductsComponent {
 
 	createOrder() : void {
 		let order : Order = {
+			basket : JSON.parse(JSON.stringify(this.basket)),
 			count : this.basket.length,
 			cost : this.getTotal()
 		};
