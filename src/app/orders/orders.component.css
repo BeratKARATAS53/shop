@@ -1,0 +1,24 @@
+.order-container {
+	background-color: #E5E5E5;
+	padding: 2rem;
+	margin-right: 2rem;
+}
+
+.order-container h1 {
+	color: #292E49 !important;
+	font-size: 24px;
+}
+
+.title *, .order-row *, .total * {
+	color: #6F6F6F !important;
+	font-size: 14px;
+}
+
+.order-row {
+	background-color: #CECECE;
+	border-radius: 20px;
+}
+
+.order-row * {
+	color: #3C3C3C !important
+}

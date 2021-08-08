@@ -1,17 +1,18 @@
-<h1>Siparişler</h1>
-<table class="table table-striped">
-	<thead>
-		<tr>
-			<th>Sıra</th>
-			<th>Ürün Sayısı</th>
-			<th>Toplam Tutar</th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr *ngFor="let order of orders; let i = index;">
-			<td>{{ i + 1 }}</td>
-			<td>{{order.count}}</td>
-			<td class="text-end">{{order.cost.toFixed(2)}} TL</td>
-		</tr>
-	</tbody>
-</table>
+<div class="order-container">
+	<h1>Siparişler</h1>
+	<div class="row title mb-2">
+		<div class="col-1">Sıra</div>
+		<div class="col-5">Ürün Sayısı</div>
+		<div class="col-6 text-end">Toplam Tutar</div>
+	</div>
+
+	<div *ngFor="let order of orders; let index = index; let last = last;" class="row order-row py-2" [ngClass]="{'mb-2': !last}">
+		<div class="col-1">{{index + 1}}</div>
+		<div class="col-5">{{order.count}}</div>
+		<div class="col-6 text-end">{{order.cost.toFixed(2)}} ₺</div>
+	</div>
+
+	<div *ngIf="!orders.length" class="row order-row py-2">
+		<p class="m-0">Henüz bir sipariş oluşturulmamıştır.</p>
+	</div>
+</div>

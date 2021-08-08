@@ -20,7 +20,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
   imports: [
     BrowserModule,
 	AppRoutingModule,
-	FormsModule
+	FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

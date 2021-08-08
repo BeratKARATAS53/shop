@@ -1,3 +1,32 @@
 table .total {
     font-weight: 600;
 }
+
+.product-container, .basket-container  {
+	background-color: #E5E5E5;
+	padding: 2rem;
+	margin-right: 2rem;
+}
+
+.product-container h1, .basket-container h1 {
+	color: #292E49 !important;
+	font-size: 24px;
+}
+
+.title *, .basket-row *, .total * {
+	color: #6F6F6F !important;
+	font-size: 14px;
+}
+
+.basket-row {
+	background-color: #CECECE;
+	border-radius: 20px;
+}
+
+.basket-row * {
+	color: #3C3C3C !important
+}
+
+button * {
+	color: white !important;
+}

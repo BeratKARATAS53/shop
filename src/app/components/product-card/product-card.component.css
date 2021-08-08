@@ -1,18 +1,18 @@
 .product {
-    display: inline-block;
-    width: 150px;
-    margin: 0 5px 10px 0;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 5px;
-    transition: 0.5s ease all;
+	display: inline-block;
+	width: 32%;
+	background-color: #BCBCBC;
+	margin: 0 5px 10px 0;
+	border-radius: 5px;
+	padding: 20px;
+	transition: 0.5s ease all;
 }
 
 .product:hover {
-    background-color: #fff8e7;
-    border-color: #ffdb83;
-    box-shadow: 0 0 5px rgb(0 0 0 / 10%);
-    transform: translateY(5px);
+	background-color: #9A9A9A;
+	border-color: #898989;
+	box-shadow: 0 0 5px rgb(0 0 0 / 10%);
+	transform: translateY(5px);
 }
 
 a {
@@ -20,26 +20,26 @@ a {
 }
 
 .product-name {
-    height: 48px;
-	
+	height: 48px;
 }
 
 .product img {
-    width: 100%;
+	width: 100%;
 }
 
 .product-price {
-    font-weight: 600;
-    color: #5abd0a;
+	font-weight: 600;
+	color: #5abd0a;
 }
 
 .quantity-bar button {
-    width: 31px;
+	width: 20%;
 }
 
 .quantity-bar input {
-    width: 40px;
-    border: none;
-    background-color: transparent;
-    text-align: center;
+	width: 50%;
+	border: none;
+	background-color: white;
+	color: #292E49 !important;
+	text-align: center;
 }

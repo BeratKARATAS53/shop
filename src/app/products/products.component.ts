@@ -12,6 +12,8 @@ export class ProductsComponent {
 	products = products;
 	basket! : Product[];
 
+	orderCreated = false;
+
 	constructor(private shopService : ShopService) {}
 
 	ngOnInit() : void {
@@ -36,9 +38,13 @@ export class ProductsComponent {
 
 		this.shopService.orders.push(order);
 
+		this.orderCreated = true;
+		setTimeout(() => this.orderCreated = false, 2000);
+
 		for(let item of this.basket) {
 			item.quantity = 0;
 		}
+
 		this.basket.length = 0;
 	}
 
