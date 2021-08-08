@@ -1,4 +1,4 @@
-<div class="product">
+<div class="product" [ngStyle]="{'width' : width + '%'}">
 	<a href="#" [routerLink]="['/products', product.id]">
 		<img [src]="product.photoPath" [alt]="product.name">
 		<div class="product-name">{{product.name}}</div>

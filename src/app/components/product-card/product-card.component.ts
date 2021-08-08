@@ -11,6 +11,8 @@ export class ProductCardComponent implements OnInit {
 
 	@Input()
 	product! : Product;
+	@Input()
+	width! : number;
 
 	@Output()
 	productAdded = new EventEmitter<Product>();
