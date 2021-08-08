@@ -51,7 +51,8 @@ export class ProductCardComponent implements OnInit {
 	removeIfZero(product : Product) : void {
 		if(product.quantity == 0) {
 			let index = this.basket.indexOf(product);
-			this.basket.splice(index, 1);
+
+			if(index > -1) this.basket.splice(index, 1);
 		}
 	}
 
