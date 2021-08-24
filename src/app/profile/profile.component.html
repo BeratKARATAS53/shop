@@ -1,0 +1,78 @@
+<div class="row">
+	<div class="profile-container" *ngIf="!isFormOpened">
+		<h1>Profil Bilgileri</h1>
+		<div class="row title mb-2">
+			<div class="col-2">Ad Soyad</div>
+			<div class="col-2">Telefon Numarası</div>
+			<div class="col-5">Adres</div>
+		</div>
+	
+		<div class="row profile-row py-2 clickable">
+			<div class="col-2">{{profile.name}}</div>
+			<div class="col-2">{{profile.phone}}</div>
+			<div class="col-6">{{profile.address.longAddress}}, {{profile.address.distinct}} / {{profile.address.city}}</div>
+			<button *ngIf="!isFormOpened" class="col-2 btn btn-success rounded-btn" (click)="isFormOpened = !isFormOpened">Düzenle</button>
+		</div>
+	</div>
+
+	<div *ngIf="isFormOpened" class="row">
+		<div class="profile-container col-md-6">
+			<h1>Profil Bilgileri</h1>
+			<div class="row mb-2">
+				<div class="col-4 title">Ad Soyad</div>
+				<div class="col">{{profile.name}}</div>
+			</div>
+			<div class="row mb-2">
+				<div class="col-4 title">Telefon Numarası</div>
+				<div class="col">{{profile.phone}}</div>
+			</div>
+			<div class="row mb-2">
+				<div class="col-4 title">Adres</div>
+				<div class="col">{{profile.address.longAddress}}, {{profile.address.distinct}} / {{profile.address.city}}</div>
+			</div>
+		</div>
+
+		<div *ngIf="isFormOpened && profileForm" class="col-md-5 form-container">
+			<h1>Bilgileri Güncelleme Formu</h1>
+			<div class="row mb-2 mx-0">
+				<div class="col title">Ad Soyad</div>
+				<input type="text" class="form-control" name="name" [(ngModel)]="profileForm.name">
+			</div>
+			<div class="row mb-2 mx-0">
+				<div class="col title">Telefon Numarası</div>
+				<input type="text" class="form-control" name="phone" [(ngModel)]="profileForm.phone">
+			</div>
+			<div class="row mb-2 mx-0">
+				<div class="col title">Adres</div>
+				<input type="text" class="form-control" name="longAddress" [(ngModel)]="profileForm.address.longAddress">
+
+				<div class="col title mt-2">İlçe</div>
+				<select name="distinct" class="form-control" [(ngModel)]="profile.address.distinct">
+					<option value="" disabled selected hidden>İlçe Seçin</option>
+					<option value="Mamak">Mamak</option>
+					<option value="Mucur">Mucur</option>
+					<option value="Sincan">Sincan</option>
+					<option value="Elmadağ">Elmadağ</option>
+				</select>
+
+				<div class="col title mt-2">İl</div>
+				<select name="city" class="form-control" [(ngModel)]="profile.address.city">
+					<option value="" disabled selected hidden>İl Seçin</option>
+					<option value="Ankara">Ankara</option>
+					<option value="Kırşehir">Kırşehir</option>
+					<option value="İstanbul">İstanbul</option>
+					<option value="İzmir">İzmir</option>
+				</select>
+			</div>
+
+			<button class="btn btn-light btn-circle close-button" (click)="isFormOpened = false">
+				<span class="text-danger">X</span>
+			</button>
+
+			<div class="button-group">
+				<button class="btn btn-secondary" (click)="isFormOpened = false">İptal</button>
+				<button class="btn btn-primary" (click)="updateProfile()">Güncelle</button>
+			</div>
+		</div>
+	</div>
+</div>

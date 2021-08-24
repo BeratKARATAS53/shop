@@ -38,22 +38,36 @@ export class ShopService {
 	deleteOrder(orderId: number | undefined): Observable<any> {
 		return this.http.delete<any>('/api/orders/' + orderId);
 	}
+
+	updateProfile(profileForm: {}) {
+		return this.http.put<any>('/api/profile/', profileForm);
+	}
 }
 
 export type Order = {
-	id?: number,
-	basket: Product[],
-	count: number,
-	cost: number
+	id?: number;
+	basket: Product[];
+	count: number;
+	cost: number;
 }
 
 export type Product = {
-	id: number,
-	name: string,
-	photoPath: string,
-	price: number,
-	unit: string,
-	quantity: number,
-	info: string,
-	related: number[]
+	id: number;
+	name: string;
+	photoPath: string;
+	price: number;
+	unit: string;
+	quantity: number;
+	info: string;
+	related: number[];
+}
+
+export type Profile = {
+	name: string;
+	phone: string;
+	address: {
+		longAddress: string;
+		distinct: string;
+		city: string;
+	};
 }

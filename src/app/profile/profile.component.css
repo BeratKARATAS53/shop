@@ -1,0 +1,50 @@
+.profile-container, .form-container {
+	position: relative;
+	background-color: #E5E5E5;
+	padding: 2rem;
+	margin-right: 2rem;
+}
+
+.profile-container h1, .form-container h1 {
+	color: #292E49 !important;
+	font-size: 24px;
+}
+
+.title, .title *, .total * {
+	color: #6F6F6F !important;
+	font-size: 14px;
+}
+
+.profile-row, .form-row {
+	background-color: #CECECE;
+	border-radius: 20px;
+	align-items: center;
+}
+
+.profile-row *, .form-row * {
+	color: #3C3C3C !important;
+	font-size: 14px;
+}
+
+.profile-row:hover, .form-row:hover {
+	background-color: #ABABAB !important;
+}
+
+.profile-row .rounded-btn {
+	margin-left: auto;
+    margin-right: 10px;
+	border-radius: 10px;
+	width: 75px;
+	color: white !important;
+}
+
+.form-container .close-button {
+	position: absolute;
+	top: 10px;
+	right: 20px;
+}
+
+.button-group {
+	display: flex;
+	justify-content: space-between;
+}

@@ -9,15 +9,17 @@ import { ProductsComponent } from './products/products.component';
 import { OrdersComponent } from './orders/orders.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-	declarations: [
+	declarations: [	
 		AppComponent,
 		ProductsComponent,
 		OrdersComponent,
 		ProductDetailComponent,
-		ProductCardComponent
-	],
+		ProductCardComponent,
+      ProfileComponent
+   ],
 	imports: [
 		BrowserModule,
 		AppRoutingModule,
